@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.workout-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.exercise-card {
+    background: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border-left: 4px solid #007bff;
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.rpe {
+    background: #007bff;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.exercise-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.exercise-details {
+    display: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.main-details {
+    display: none;
+}
+
+.substitutions {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.notes {
+    background: #fff3cd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.exercise-card.active .exercise-details {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .main-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+.week-section {
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.week-section h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+}
+
+.workout-type {
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.workout-type h3 {
+    color: #495057;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #e9ecef;
+    border-radius: 4px;
+}
+
+.exercise-card {
+    margin: 10px 15px;
+}
+
+.weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.week-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #007bff;
+    position: relative;
+}
+
+.week-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.week-card h2 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.week-summary {
+    color: #666;
+}
+
+.week-details {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.week-details.active {
+    display: block;
+}
+
+.week-content {
+    background: white;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-button:hover {
+    background: #c82333;
+}
+
+.week-card.completed {
+    border-color: #28a745;
+    background-color: #f8fff9;
+}
+
+.complete-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.complete-button:hover {
+    background-color: #0056b3;
+}
+
+.complete-button.completed {
+    background-color: #28a745;
+}
+
+.complete-button.completed:hover {
+    background-color: #218838;
+}
+
+.complete-button-large {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1.1em;
+}
+
+.complete-button-large:hover {
+    background-color: #0056b3;
+}
+
+.complete-button-large.completed {
+    background-color: #28a745;
+}
+
+.complete-button-large.completed:hover {
+    background-color: #218838;
+}
+
+.week-card.completed:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.2);
+}
+
+.continue-card {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+}
+
+.continue-card h2 {
+    color: white;
+}
+
+.continue-card .week-summary {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.continue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.continue-icon {
+    font-size: 2em;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.continue-card.completed {
+    background: linear-gradient(135deg, #28a745, #218838);
+}
+
+.continue-card.completed .continue-icon {
+    animation: celebrate 1s ease-in-out infinite;
+}
+
+@keyframes celebrate {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.exercise-title {
+    flex-grow: 1;
+}
+
+.exercise-title h4 {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.exercise-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    pointer-events: none;
+}
+
+.metric {
+    background: #e9ecef;
+    color: #495057;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.metric.rpe {
+    background: #007bff;
+    color: white;
+}
+
+.dropdown-indicator {
+    color: #007bff;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.exercise-card.active .dropdown-indicator {
+    transform: rotate(180deg);
+}
+
+.exercise-header:hover {
+    background: rgba(0, 123, 255, 0.05);
+}
+
+.workout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #e9ecef;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.workout-header:hover {
+    background: #dee2e6;
+}
+
+.workout-header h3 {
+    margin: 0;
+    color: #495057;
+}
+
+.workout-dropdown-indicator {
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.workout-dropdown-indicator.open {
+    transform: rotate(180deg);
+}
+
+.workout-exercises {
+    display: none;
+    padding: 15px 0;
+}
+
+.workout-exercises.open {
+    display: block;
+}
+
+.rest-metric {
+    display: flex !important;
+    align-items: center;
+    gap: 5px;
+    pointer-events: all !important;
+}
+
+.timer-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    font-size: 1em;
+    transition: transform 0.2s;
+    pointer-events: all;
+    position: relative;
+}
+
+.timer-button:hover {
+    transform: scale(1.1);
+}
+
+.timer-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.timer-button.running {
+    animation: pulse 1s infinite;
+}
+
+.timer-display {
+    min-width: 45px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.timer-button::after {
+    content: '↻';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.timer-button.running::after {
+    opacity: 1;
+} 
