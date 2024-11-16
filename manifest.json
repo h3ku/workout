@@ -2,7 +2,7 @@
   "name": "Workout Tracker",
   "short_name": "Workout",
   "description": "Track your workout progress",
-  "start_url": "/workout/?source=pwa",
+  "start_url": "/workout/",
   "display": "standalone",
   "background_color": "#f4f4f4",
   "theme_color": "#007bff",
