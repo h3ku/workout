@@ -2,10 +2,31 @@
   "name": "Workout Tracker",
   "short_name": "Workout",
   "description": "Track your workout progress",
-  "start_url": "/your-repo-name/",
+  "start_url": "/workout/?source=pwa",
   "display": "standalone",
   "background_color": "#f4f4f4",
   "theme_color": "#007bff",
+  "orientation": "portrait",
+  "categories": ["fitness", "health", "lifestyle"],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Start Workout",
+      "short_name": "Workout",
+      "description": "Start a new workout session",
+      "url": "/workout/new-workout",
+      "icons": [{ "src": "icons/workout-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/home-screen.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Home screen of Workout Tracker"
+    }
+  ],
   "icons": [
     {
       "src": "icons/icon-72x72.png",
