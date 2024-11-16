@@ -1,16 +1,16 @@
 const CACHE_NAME = 'workout-tracker-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/src/main.js',
-  '/src/modules/events.js',
-  '/src/modules/parser.js',
-  '/src/modules/storage.js',
-  '/src/modules/timer.js',
-  '/src/modules/ui.js',
-  '/workout.csv',
-  '/manifest.json',
+  '/workout/',
+  '/workout/index.html',
+  '/workout/styles.css',
+  '/workout/main.js',
+  '/workout/modules/events.js',
+  '/workout/modules/parser.js',
+  '/workout/modules/storage.js',
+  '/workout/modules/timer.js',
+  '/workout/modules/ui.js',
+  '/workout/workout.csv',
+  '/workout/manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js'
 ];
 
